@@ -29,7 +29,7 @@
 <option id="program-prefix" value=""/>
 <option id="program-suffix" value=""/>
 <option id="program-transform-name" value=""/>
-<option id="enable-maintainer-mode" value="false"/>
+<option id="enable-maintainer-mode" value="true"/>
 <flag id="CFLAGS">
 <flagvalue id="cflags-debug" value="false"/>
 <flagvalue id="cflags-gprof" value="false"/>

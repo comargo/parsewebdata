@@ -23,3 +23,6 @@ exampleProgram_LDFLAGS = $(top_builddir)/ParseWebData/libParseWebData.la
 
 # Compiler options for a.out
 exampleProgram_CPPFLAGS = -I$(top_srcdir)/include
+
+exampledir = $(docdir)/example
+example_DATA = $(exampleProgram_SOURCES)

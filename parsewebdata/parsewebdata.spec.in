@@ -1,0 +1,69 @@
+Name:           @PACKAGE@
+Version:        @VERSION@
+Release:        1%{?dist}
+Summary:        C++ library for parsing of post and get data (including multipart/form-data encoding)
+
+Group:          System Environment/Libraries
+License:        MIT
+URL:            http://parsewebdata.googlecode.com/
+Source0:        http://parsewebdata.googlecode.com/files/%{name}-%{version}.tar.bz2
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+
+BuildRequires:  autoconf, automake, libtool
+#Requires:       
+
+%description
+C++ library for parsing of post and get data (including multipart/form-data encoding)
+
+%package        devel
+Summary:        Development files for %{name}
+Group:          Development/Libraries
+Requires:       %{name}%{?_isa} = %{version}-%{release}
+
+%description    devel
+The %{name}-devel package contains libraries and header files for
+developing applications that use %{name}.
+
+
+%prep
+%setup -q
+
+
+%build
+%configure --disable-static
+make %{?_smp_mflags}
+
+
+%install
+rm -rf $RPM_BUILD_ROOT
+make install DESTDIR=$RPM_BUILD_ROOT
+find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
+
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+
+%post -p /sbin/ldconfig
+
+%postun -p /sbin/ldconfig
+
+
+%files
+%defattr(-,root,root,-)
+%doc AUTHORS ChangeLog COPYING INSTALL NEWS README
+%{_libdir}/*.so.*
+
+%files devel
+%defattr(-,root,root,-)
+%doc %{_docdir}/%{name}/example/*
+%{_includedir}/*
+%{_libdir}/*.so
+%{_libdir}/pkgconfig/*.pc
+
+
+%changelog
+* Thu Jul 12 2012 Cyril Margorin
+- examples added
+- pkg-config file added
+

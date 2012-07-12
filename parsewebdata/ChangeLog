@@ -1,6 +1,33 @@
+2012-07-12  Cyril Margorin  <comargo@gmail.com>
+
+	* aclocal.m4: New file.
+	* auxdir/compile: New file.
+	* auxdir/config.guess: New file.
+	* auxdir/config.sub: New file.
+	* auxdir/depcomp: New file.
+	* auxdir/install-sh: New file.
+	* auxdir/ltmain.sh: New file.
+	* auxdir/missing: New file.
+	* exampleProgram/Makefile.in: New file.
+	* include/Makefile.in: New file.
+	* m4/libtool.m4: New file.
+	* m4/ltoptions.m4: New file.
+	* m4/ltsugar.m4: New file.
+	* m4/ltversion.m4: New file.
+	* m4/lt~obsolete.m4: New file.
+	* Makefile.in: New file.
+	* ParseWebData/Makefile.in: New file.
+	* parsewebdata.pc.in: New file.
+	* parsewebdata.spec.in: New file.
+	* .autotools: Add maintainer mode
+	* .cproject: Add pkg-config and spec files
+	* configure.ac:  Add pkg-config and spec files
+	Add maintainer mode	 	
+	* exampleProgram/Makefile.am: Add library example 
+	* Makefile.am:  Add pkg-config and spec files
+	
 2012-07-11  Cyril Margorin  <comargo@gmail.com>
 
-Initial commit
 	* .autotools: New file.
 	* .cproject: New file.
 	* .project: New file.
