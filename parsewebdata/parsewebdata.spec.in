@@ -1,6 +1,6 @@
 Name:           @PACKAGE@
 Version:        @VERSION@
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        C++ library for parsing of post and get data (including multipart/form-data encoding)
 
 Group:          System Environment/Libraries
@@ -8,9 +8,6 @@ License:        MIT
 URL:            http://parsewebdata.googlecode.com/
 Source0:        http://parsewebdata.googlecode.com/files/%{name}-%{version}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-
-BuildRequires:  autoconf, automake, libtool
-#Requires:       
 
 %description
 C++ library for parsing of post and get data (including multipart/form-data encoding)
@@ -63,6 +60,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Jul 13 2012 Cyril Margorin 0.0.2-2
+- remove BuildRequires
+
 * Thu Jul 12 2012 Cyril Margorin
 - examples added
 - pkg-config file added
